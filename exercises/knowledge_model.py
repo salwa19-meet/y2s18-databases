@@ -6,6 +6,23 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Knowledge(Base):
+	__tablename__ = 'pizza'
+	pizza_id = Column(Integer, primary_key=True)
+	name = Column(String)
+	year = Column(Integer)
+	country = Column(String)
+
+
+	def __repr__ (self):
+		return ("pizza name: {}\n"
+				"pizza year: {}\n"
+				"pizza country: {}\n").format(
+				self.name, self.year,self.country)
+				
+				
+
+
+
 	# Create a table with 4 columns
 	# The first column will be the primary key
 	# The second column should be a string representing
